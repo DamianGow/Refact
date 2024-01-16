@@ -40,4 +40,13 @@ public class Rental {
 		return amount;
 	}
 
+	int calculateFrequentRenterPoints(int frequentRenterPoints) {
+	    int points = 0;
+	    points++;
+		// add bonus for a two day new release rental
+		if (getMovie().getPriceCode() == Movie.NEW_RELEASE && getDaysRented() > 1)
+			points++;
+		return points;
+	}
+
 }
